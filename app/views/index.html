@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  {% if serviceName %} {{ serviceName }} {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">
+        Create an API key
+      </h1>
+
+      {% if errors %}
+        <div class="error-summary">
+          <h2 class="heading-medium error-summary-heading">There is a problem</h2>
+            <ul class="error-summary-list">
+              <li><a href="#confirm-help">{{ error.msg }}</a></li>
+            </ul>
+        </div>
+      {% endif %}
+
+      <form class="form" action="/api-key" method="post">
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" id="email" type="email" name="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="organisation">
+            Organisation
+            <span class="form-hint">The organisation or government department you work for</span>
+          </label>
+          <input class="form-control" id="organisation" type="text" name="organisation">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="service">
+            Service
+            <span class="form-hint">What website of service will use registers</span>
+          </label>
+          <input class="form-control" id="service" type="text" name="service">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
