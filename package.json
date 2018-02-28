@@ -1,10 +1,11 @@
 {
-  "name": "express-prototype",
-  "description": "GOVUK prototyping app in Express",
+  "name": "registers-api-key-signup",
+  "description": "GOVUK Registers API key signup",
   "version": "6.3.0",
   "private": true,
   "engines": {
-    "node": ">=8.9.1 <9.0"
+    "node": "8.9.4",
+    "npm": "5.6.0"
   },
   "scripts": {
     "start": "node start.js",
